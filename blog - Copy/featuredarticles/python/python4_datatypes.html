@@ -1,0 +1,672 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Python Data Types</title>
+    <link rel="icon" type="image/png" href="E:\blog\icons\logo1.png">
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+        const toggleSwitch = document.getElementById('modeToggle');
+        const currentTheme = localStorage.getItem('theme');
+    
+        if (currentTheme) {
+            document.body.classList.add(currentTheme);
+            if (currentTheme === 'dark-mode') {
+                toggleSwitch.checked = true;
+            }
+        }
+    
+        toggleSwitch.addEventListener('change', function() {
+            if (this.checked) {
+                document.body.classList.add('dark-mode');
+                document.body.classList.remove('light-mode');
+                localStorage.setItem('theme', 'dark-mode');
+            } else {
+                document.body.classList.add('light-mode');
+                document.body.classList.remove('dark-mode');
+                localStorage.setItem('theme', 'light-mode');
+            }
+        });
+    });
+    document.addEventListener('DOMContentLoaded', function() {
+    const bubbleContainer = document.querySelector('.bubble-container');
+
+    function createBubble() {
+        const bubble = document.createElement('div');
+        bubble.className = 'bubble';
+
+        const size = Math.random() * 70 + 20 + 'px';
+        bubble.style.width = size;
+        bubble.style.height = size;
+        bubble.style.left = Math.random() * 100 + '%';
+        bubble.style.animationDuration = Math.random() * 5 + 10 + 's';
+        bubble.style.animationTimingFunction = 'cubic-bezier(0.36, 0.45, 0.63, 0.53)';
+
+        bubbleContainer.appendChild(bubble);
+
+        setTimeout(() => {
+            bubble.remove();
+        }, 15000);
+    }
+
+    setInterval(createBubble, 500);
+});
+document.addEventListener('DOMContentLoaded', function () {
+    // Select the menu toggle button and navigation
+    const menuToggle = document.querySelector('.menu-toggle');
+    const navigation = document.querySelector('.navigation');
+
+    // Add click event listener to toggle menu visibility
+    menuToggle.addEventListener('click', () => {
+        navigation.classList.toggle('active');
+    });
+});
+
+
+    
+      </script>
+    <style>
+        :root { --bg-color-light: #ffffff; 
+    --text-color-light: #000000; 
+    --bg-color-dark: #121212; 
+    --text-color-dark: #ffffff; 
+    --header-bg-light: #f0f0f0; 
+    --header-bg-dark: #1a1a1a;
+    --blue-color: #2196F3;
+    --line-color: #000000; 
+    --shadow-color-light: 0 2px 5px rgba(0, 0, 0,0.2);
+    --shadow-color-dark: 0 2px 5px rgb(255, 255, 255,0.2);
+     }
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            background-color: var(--bg-color-light);
+            color: var(--text-color-light);
+           
+        }
+
+        header {
+    display:flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1% 2%;
+    background-color: var(--bg-color-light);
+    color: var(--text-color-light);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 1);
+    
+    margin: 20px;
+    
+}
+.menu-toggle {
+    display: none;
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+    color: var(--text-color-light);
+}
+
+
+nav ul {
+    display:flex;
+    flex-grow: 3;
+    justify-content: space-around;
+}
+
+nav ul li {
+    margin: 0 72px;
+    display:flex;
+ 
+   
+}
+
+nav ul li a {
+    font-size: 16px;
+    font-weight: 500;
+    display: flex;
+    background-color: var(--bg-color-light);
+    color: var(--text-color-light);
+    padding: 5px 10px;
+    transition: color 0.3s, background-color 0.3s;
+}
+
+nav ul li a:hover {
+    color: #fff;
+    background-color: #007BFF;
+    
+    border-radius: 4px;
+}
+
+
+        .container {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: var(--bg-color-light);
+            color: var(--text-color-light);
+            border-radius: 8px;
+            box-shadow:var(--shadow-color-light);
+        }
+
+        h2 {
+            color: #007bff;
+        }
+
+        code {
+          
+            padding: 2px 4px;
+            border-radius: 4px;
+            font-family: Consolas, Monaco, monospace;
+        }
+
+        pre {
+           
+            background-color:#ffffff;
+            padding: 10px;
+            border-radius: 4px;
+            overflow-x: auto;
+            box-shadow: var(--shadow-color-light);
+     
+        }
+        .comment{
+            color:red;  
+
+        }
+        .actual-code{
+            color:blue
+        }
+
+        a {
+            color: #007bff;
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+        
+
+.bubble-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    overflow: hidden;
+}
+
+.bubble {
+    position: absolute;
+    bottom: -100px;
+    background-color:#007BFF; /* Light blue color */
+    border-radius: 50%;
+    opacity: 0.6;
+    animation: move 15s infinite;
+}
+
+@keyframes move {
+    from {
+        transform: translateY(0) scale(1);
+    }
+    to {
+        transform: translateY(-120vh) scale(0);
+    }
+}
+
+header .logo 
+{ font-size: 24px;
+    font-weight: bold; 
+    color: var(--text-color-light); margin-right: 20px;} 
+.logo { display: flex; align-items: center; } 
+
+header .logo .code { color: var(--blue-color); }
+ header .logo .pro { color: var(--text-color-light); }
+/* Logo Container */
+.logo-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5px; /* Space between the line and triangle */
+}
+
+/* Black Line */
+.line {
+    width: 40px;
+    height: 4px;
+    background-color: var(--line-color);/* Black color */
+    border-radius: 2px;
+}
+
+/* Inverted Triangle */
+.triangle {
+    width: 0;
+    height: 0;
+    border-left: 20px solid transparent;
+    border-right: 20px solid transparent;
+    border-top: 30px solid #2196f3; /* Blue color */
+}
+
+
+
+           
+/* Dark mode styles */
+body.dark-mode {
+    --bg-color-light: var(--bg-color-dark);
+    --text-color-light: var(--text-color-dark);
+    --header-bg-light: var(--header-bg-dark);
+    --line-color: #ffffff;
+    --shadow-color-light:var(--shadow-color-dark);
+    
+}
+
+
+/* Toggle switch styles */
+.switch  {
+    position: absolute;
+    top: 16%;
+    right: 2%;
+    display: inline-block;
+    width: 60px;
+    height: 34px;
+    
+}
+
+.switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    transition: .4s;
+    border-radius: 34px;
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 26px;
+    width: 26px;
+    left: 4px;
+    bottom: 4px;
+    background-color: white;
+    transition: .4s;
+    border-radius: 50%;
+}
+
+input:checked + .slider {
+    background-color: #2196F3;
+}
+
+input:checked + .slider:before {
+    transform: translateX(26px);
+}
+
+
+        footer {
+            text-align: center;
+           
+            background-color: var(--bg-color-light);
+            color: var(--text-color-light);
+        }
+ 
+j{
+    color:green;
+}
+table {
+            border-collapse: collapse;
+            width: 100%;
+            position: relative;
+            
+        }
+         td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+        th {
+            background-color:#007BFF;
+            font-weight: bold;
+            text-align: center;
+        }
+            
+        .read-more-btn-next {
+    display: inline-block;
+    position:relative;
+    background-color: #007BFF;
+    color: #fff;
+    padding: 10px 30px;
+    left:78%;
+    font-size: 14px;
+    font-weight: bold;
+    text-align: center;
+    border-radius: 4px;
+    transition: background-color 0.3s;
+}
+
+.read-more-btn-next:hover {
+    background-color: #0056b3;
+}       
+.read-more-btn-prev {
+    display: inline-block;
+    position:relative;
+    background-color: #007BFF;
+    color: #fff;
+    padding: 10px 15px;
+   
+    font-size: 14px;
+    font-weight: bold;
+    text-align: center;
+    border-radius: 4px;
+    transition: background-color 0.3s;
+}
+
+.read-more-btn-next:hover {
+    background-color: #0056b3;
+}   
+              
+/* Responsive styles for screens smaller than 480px */
+@media (max-width: 480px) {
+    header {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+  
+    .menu-toggle {
+      display: inline-block;
+      position:absolute;
+      left:85% ;
+      top:3%;/* Show menu toggle button */
+    cursor: pointer;
+    }
+  
+    .navigation {
+      width: 100%;
+      display: none; /* Hide navigation by default */
+      flex-direction: column;
+      background-color: var(--bg-color-light);
+    }
+  
+    .navigation.active {
+      display:flex; /* Show navigation when active */
+    }
+  
+    .navigation ul {
+      flex-direction: column; /* Arrange items vertically */
+      gap: 0; /* Remove space between items */
+      padding: 0;
+    }
+  
+    .navigation ul li {
+      border-bottom: 1px solid var(--border-color-light);
+    }
+  
+    .navigation ul li a {
+      display: block;
+      padding: 10px;
+      font-size: 0.9rem;
+      color: var(--text-color-light);
+    }
+  
+    .navigation ul li a:hover {
+      background-color: var(--highlight-color-light); /* Highlight on hover */
+      color: var(--bg-color-light);
+    }
+    .switch {
+        position: absolute;
+        top: 10%;
+        right: 7%;
+        display: inline-block;
+        width: 60px;
+        height: 34px;
+    }
+.read-more-btn-prev{
+    position: absolute;
+    left:10%
+}
+table {
+            border-collapse: collapse;
+            width: 50%;
+            position: relative;
+        }
+         td {
+            border: 1px solid #ddd;
+            padding: 4px;
+            text-align: left;
+        }
+        th {
+            background-color:#007bff;
+            font-weight: bold;
+            text-align: center;
+        }
+        
+        .container {
+            max-width: 800px;
+            
+         
+            background-color: var(--bg-color-light);
+            color: var(--text-color-light);
+            border-radius: 8px;
+            box-shadow:var(--shadow-color-light);
+        }
+   pre{
+    width: 250px;
+   }
+        
+
+   
+  }
+
+
+    </style>
+</head>
+<body>
+    <div class="bubble-container"></div>
+    <header class="responsive">
+        <div class="logo"> 
+            <div class="logo-container">
+                <div class="line"></div>
+                <div class="triangle"></div>
+            </div>
+           
+            <span class="code">Code</span><span class="pro">Pro</span> 
+        </div>
+        <button class="menu-toggle" aria-label="Toggle menu">☰</button>
+        <nav class="navigation">
+            <ul>
+                <li><a href="E:\blog\index.html">Home</a></li>
+                <li><a href="E:\blog\dailyupdates\dailyupdates.html">Daily Updates</a></li>
+                <li><a href="E:\blog\featuredarticles\featuredarticles.html">Featured Articles</a></li>
+                <li><a href="E:\blog\about\about.html">About</a></li>
+                <li><a href="E:\blog\contact\contact.html">Contact</a></li>
+               <label class="switch">
+                    <input type="checkbox" id="modeToggle"> 
+                   <span class="slider">
+       
+               </span> 
+               </label>
+            </ul>
+        </nav>
+      
+    </header>
+    <h1 style="text-align: center;color:#007bff">Python Data Types</h1>
+    <div class="container">
+        <h2>Python Data Types</h2>
+        <p>
+            In programming, data type is an important concept.
+
+            Variables can store data of different types, and different types can do different things.
+            Python provides a variety of data types to store and manipulate data efficiently.</p>
+
+               </p>
+        <ol>
+            <li><strong>Numeric Types:</strong>
+            <ul>
+                <li><code>int</code>: Used for Integers consists of positive,negative numbers including zero (e.g 1, 4, 0, -5).</li>
+                <li><code>float</code>: Used for decimal or floating-point numbers (e.g 3.414, -0.428).</li>
+                <li><code>complex</code>: Used for complex numbers with real and imaginary parts (e.g 3 + 4j, -1 + j).</li>
+
+            </ul>
+        </li>
+        <li><strong>Sequence Types:</strong>
+            <ul>
+                <li><code>str</code>: Represents a sequence of characters, used for text (e.g., "hello").</li>
+                <li><code>list</code>: Represents an ordered, mutable (changable) collection (e.g., [1, 2, 3]).</li>
+                <li><code>tuple</code>: Represents an ordered, immutable collection (e.g., (1, 2, 3)).</li>
+
+            </ul>
+        </li>
+        <li><strong>Mapping Type:</strong>
+            <ul>
+                <li><code>dict</code>: Represents  a collection of key-value pairs, where keys are unique (e.g., {"name": "Alice", "age": 25}).</li>
+                
+            </ul>
+        </li>
+        <li><strong>Set Types:</strong>
+            <ul>
+                <li><code>set</code>: Represents  an unordered collection of unique elements (e.g., {1, 2, 3}).</li>
+                <li><code>list</code>: Represents an immutable version of a set.</li>
+               
+            </ul>
+        </li>
+        <li><strong>Boolean Type:</strong>
+            <ul>
+                <li><code>bool</code>: Represents <code>True</code> or <code>False</code> values</li>
+                
+            </ul>
+        </li>
+        <li><strong>Binary Types:</strong>
+            <ul>
+                <li><code>bytes</code>: Represents Immutable sequence of bytes (e.g., b"hello").</li>
+                <li><code>bytearray</code>: Represents  Mutable sequence of bytes.</li>
+                <li><code>memoryview</code>: Represents A memory-efficient way to access slices of binary data..</li>
+
+            </ul>
+        </li>
+        <li><strong>None Type:</strong>
+            <ul>
+                <li><code>None</code>: Represents the absence of a value. Only one instance exists: <code>None</code>.</li>
+                
+            </ul>
+        </li>
+        </ol>
+        <h2>Working with Data Types</h2>
+        <table border="2">
+            <tr>
+                <th>Example</th>
+                <th>Data Type</th>
+            </tr>
+            <tr>
+                <td>
+                    <pre><code class="actual-code">x = 10</code></pre>
+                </td>
+                <td style="align-self:center;"><code>int</code></td>
+            </tr>
+            <tr>
+                <td>
+                    <pre><code class="actual-code">x = <j style="color:green">"Hello World!"</j></code></pre>
+                </td>
+                <td style="align-self:center;"><code>str</code></td>
+            </tr>
+            <tr>
+                <td>
+                    <pre><code class="actual-code">x = 3.414</code></pre>
+                </td>
+                <td style="align-self:center;"><code>float</code></td>
+            </tr>
+            <tr>
+                <td>
+                    <pre><code class="actual-code">x = 3 + 4j </code></pre>
+                </td>
+                <td style="align-self:center;"><code>complex</code></td>
+            </tr>
+            <tr>
+                <td>
+                    <pre><code class="actual-code">x = [<j>"Apple"</j>,<j>"Banana"</j>,<j>"Orange"</j> ]</code></pre>
+                </td>
+                <td style="align-self:center;"><code>list</code></td>
+            </tr>
+            <tr>
+                <td>
+                    <pre><code class="actual-code">x = (<j>"Apple"</j>,<j>"Banana"</j>,<j>"Orange"</j> )</code></pre>
+                </td>
+                <td style="align-self:center;"><code>tuple</code></td>
+            </tr>
+            <tr>
+                <td>
+                    <pre><code class="actual-code">x = {<j>"Name"</j>:<j>"Ravi"</j>,<j>"Age"</j>:20 }</code></pre>
+                </td>
+                <td style="align-self:center;"><code>dict</code></td>
+            </tr>
+            <tr>
+                <td>
+                    <pre><code class="actual-code">x = {<j>"Apple"</j>,<j>"Banana"</j>,<j>"Orange"</j> }</code></pre>
+                </td>
+                <td style="align-self:center;"><code>set</code></td>
+            </tr>
+            <tr>
+                <td>
+                    <pre><code class="actual-code">x = frozenset {<j>"Apple"</j>,<j>"Banana"</j>,<j>"Orange"</j> }</code></pre>
+                </td>
+                <td style="align-self:center;"><code>frozenset</code></td>
+            </tr>
+            <tr>
+                <td>
+                    <pre><code class="actual-code">x = <g style="color:rgb(204, 26, 56)">True</code></pre>
+                </td>
+                <td style="align-self:center;"><code>bool</code></td>
+            </tr>
+            <tr>
+                <td>
+                    <pre><code class="actual-code">x = b <j>"Python Tutorial"</j></code></pre>
+                </td>
+                <td style="align-self:center;"><code>byte</code></td>
+            </tr>
+            <tr>
+                <td>
+                    <pre><code class="actual-code">x = bytearray(5)</code></pre>
+                </td>
+                <td style="align-self:center;"><code>bytearray</code></td>
+            </tr>
+            <tr>
+                <td>
+                    <pre><code class="actual-code">x = memoryview(bytes(5))</code></pre>
+                </td>
+                <td style="align-self:center;"><code>memoryview</code></td>
+            </tr>
+            <tr>
+                <td>
+                    <pre><code class="actual-code">x = <d style="color:orangered">None</d></code></pre>
+                </td>
+                <td style="align-self:center;"><code>None</code></td>
+            </tr>
+        </table>
+        <h2>
+            Key Features
+        </h2>
+        <ul>
+            <li><strong>Dynamic Typing:</strong></li>Python variables don’t require explicit type declaration. The type is determined at runtime.
+            <li><strong>Type Conversion:</strong></li>Python allows explicit type conversion using functions like <code>int(), float(), str(),</code> etc.
+            <li><strong>Flexible and Rich:</strong></li>Python variables don’t require explicit type declaration. The type is determined at runtime.
+
+        </ul>
+        <a href="E:\blog\featuredarticles\python\python3_variables.html" class="read-more-btn-prev">Previous</a>
+        <a href="E:\blog\featuredarticles\python\python5`_operators.html" class="read-more-btn-next">Next</a>
+    </div>
+
+    <footer>
+        &copy; 2024 Tech Blog. All Rights Reserved.
+    </footer>
+</body>
+</html>

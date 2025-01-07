@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link rel="icon" type="image/png" href="E:\blog\icons\logo1.png">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Stay updated with the latest trends and news in technology. Explore today's highlights in AI, programming, gadgets, and more.">
+  <meta name="keywords" content="Tech Update, Technology News, Daily Tech, Programming, AI, Gadgets">
+  <meta name="author" content="TechBlog">
+  <title>Daily Tech Update</title>
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+    const toggleSwitch = document.getElementById('modeToggle');
+    const currentTheme = localStorage.getItem('theme');
+
+    if (currentTheme) {
+        document.body.classList.add(currentTheme);
+        if (currentTheme === 'dark-mode') {
+            toggleSwitch.checked = true;
+        }
+    }
+
+    toggleSwitch.addEventListener('change', function() {
+        if (this.checked) {
+            document.body.classList.add('dark-mode');
+            document.body.classList.remove('light-mode');
+            localStorage.setItem('theme', 'dark-mode');
+        } else {
+            document.body.classList.add('light-mode');
+            document.body.classList.remove('dark-mode');
+            localStorage.setItem('theme', 'light-mode');
+        }
+    });
+});
+document.addEventListener('DOMContentLoaded', function() {
+    const bubbleContainer = document.querySelector('.bubble-container');
+
+    function createBubble() {
+        const bubble = document.createElement('div');
+        bubble.className = 'bubble';
+
+        const size = Math.random() * 70 + 20 + 'px';
+        bubble.style.width = size;
+        bubble.style.height = size;
+        bubble.style.left = Math.random() * 100 + '%';
+        bubble.style.animationDuration = Math.random() * 5 + 10 + 's';
+        bubble.style.animationTimingFunction = 'cubic-bezier(0.36, 0.45, 0.63, 0.53)';
+
+        bubbleContainer.appendChild(bubble);
+
+        setTimeout(() => {
+            bubble.remove();
+        }, 15000);
+    }
+
+    setInterval(createBubble, 500);
+});
+
+  </script>
+  <style>
+    :root { --bg-color-light: #ffffff; 
+    --text-color-light: #000000; 
+    --bg-color-dark: #121212; 
+    --text-color-dark: #ffffff; 
+    --header-bg-light: #f0f0f0; 
+    --header-bg-dark: #1a1a1a;
+    --blue-color: #2196F3;
+    --line-color: #000000; 
+    --shadow-color-light: 0 2px 5px rgba(0, 0, 0,0.2);
+    --shadow-color-dark: 0 2px 5px rgb(255, 255, 255,0.2);
+     }
+
+    body {
+      font-family: Arial, sans-serif;
+      line-height: 1.6;
+      margin: 0;
+      padding: 0;
+      background-color: var(--bg-color-light);
+      color: var(--text-color-light);
+      overflow: auto;
+    }
+   
+    header {
+            display: flex;
+            background-color:var(--bg-color-light);
+            margin:20px;
+            align-items: center;
+            padding:1% 2% ;
+            color: #007bff;
+           
+            text-align: center;
+            box-shadow: var(--shadow-color-light);
+            
+        }
+
+        header h1 {
+            position: absolute;
+            left: 40%;
+            margin: 0;
+            font-size: 28px;
+        }
+
+    .container {
+      max-width: 800px;
+      margin: 20px auto;
+      padding: 15px;
+      background-color: var(--bg-color-light);
+      color: var(--text-color-light);
+      border-radius: 5px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    }
+    .article-meta {
+      color: var(--text-color-light);
+      font-size: 14px;
+      margin-bottom: 15px;
+    }
+    .article-title {
+      font-size: 24px;
+      margin: 15px 0;
+      color: var(--text-color-light);
+    }
+    .article-content {
+      font-size: 18px;
+      color: var(--text-color-light);
+      margin-bottom: 20px;
+    }
+    .tags {
+      margin-top: 20px;
+    }
+    .tags span {
+      display: inline-block;
+      color: var(--text-color-light);
+      padding: 5px 10px;
+      margin: 5px 5px 0 0;
+      border-radius: 3px;
+      font-size: 14px;
+    }
+    .share-buttons {
+      margin: 20px 0;
+      text-align: center;
+    }
+    .share-buttons a {
+      text-decoration: none;
+      color: white;
+      padding: 10px 15px;
+      margin: 5px;
+      border-radius: 5px;
+      display: inline-block;
+    }
+  
+.bubble-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    overflow: hidden;
+}
+
+.bubble {
+    position: absolute;
+    bottom: -100px;
+    background-color:#007BFF; /* Light blue color */
+    border-radius: 50%;
+    opacity: 0.6;
+    animation: move 15s infinite;
+}
+
+@keyframes move {
+    from {
+        transform: translateY(0) scale(1);
+    }
+    to {
+        transform: translateY(-120vh) scale(0);
+    }
+}
+
+  
+header .logo 
+{ font-size: 24px;
+    font-weight: bold; 
+    color: var(--text-color-light); margin-right: 20px;} 
+.logo { display: flex; align-items: center; } 
+
+header .logo .code { color: var(--blue-color); }
+ header .logo .pro { color: var(--text-color-light); }
+/* Logo Container */
+.logo-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5px; /* Space between the line and triangle */
+}
+
+/* Black Line */
+.line {
+    width: 40px;
+    height: 4px;
+    background-color: var(--line-color);/* Black color */
+    border-radius: 2px;
+}
+
+/* Inverted Triangle */
+.triangle {
+    width: 0;
+    height: 0;
+    border-left: 20px solid transparent;
+    border-right: 20px solid transparent;
+    border-top: 30px solid #2196f3; /* Blue color */
+}
+
+
+
+    
+/* Dark mode styles */
+body.dark-mode {
+    --bg-color-light: var(--bg-color-dark);
+    --text-color-light: var(--text-color-dark);
+    --header-bg-light: var(--header-bg-dark);
+    --line-color: #ffffff;
+    --shadow-color-light:var(--shadow-color-dark);
+    
+}
+
+
+/* Toggle switch styles */
+.switch  {
+    position: absolute;
+    top: 14%;
+    right: 2%;
+    display: inline-block;
+    width: 60px;
+    height: 34px;
+}
+
+.switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    transition: .4s;
+    border-radius: 34px;
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 26px;
+    width: 26px;
+    left: 4px;
+    bottom: 4px;
+    background-color: white;
+    transition: .4s;
+    border-radius: 50%;
+}
+
+input:checked + .slider {
+    background-color: #2196F3;
+}
+
+input:checked + .slider:before {
+    transform: translateX(26px);
+}
+
+
+
+
+
+    
+  
+   
+    footer {
+      text-align: center;
+      padding: 15px;
+      background-color: var(--bg-color-light);
+      color: var(--text-color-light);
+    }
+    
+/* Responsive styles for screens smaller than 480px */
+@media (max-width: 480px) {
+  .switch  {
+    position: absolute;
+    top: 6%;
+    right: 3%;
+    left:auto;
+    display: inline-block;
+    width: 60px;
+    height: 34px;
+} 
+input:checked + .slider {
+    background-color: #000;
+}
+header{
+    height:20px;
+}
+
+header h1{
+    
+    font-size: 20px;
+    left:30%
+
+}
+header .logo{
+    display: none;
+}
+
+   
+  }
+
+ 
+  </style>
+</head>
+<body>
+  <div class="bubble-container"></div>
+<header>
+  <div class="logo"> 
+    <div class="logo-container">
+        <div class="line"></div>
+        <div class="triangle"></div>
+    </div>
+   
+    <span class="code">Code</span><span class="pro">Pro</span> 
+</div>
+
+  <h1>Daily Tech Update</h1>
+</header>
+<label class="switch">
+  <input type="checkbox" id="modeToggle"> 
+ <span class="slider">
+
+</span> 
+</label>
+
+<div class="container">
+  <div class="article-meta">
+    Published on <strong>December 19, 2024</strong> by <em>TechBlog Team</em>
+  </div>
+
+  <h2 class="article-title">A new era for Windows: Can Microsoft’s longtime engine power another tech revolution?</h2>
+  <img src="https://pub-c2c1d9230f0b4abb9b0d2d95e06fd4ef.r2.dev/sites/664/2023/09/DDR51179AA-1000x667.jpg" style="max-width: 50%;margin-left: 25%;position: relative;"/>
+  <h3>A tech icon has reached another point</h3>
+  <div class="article-content">
+    <p>After fueling the rise of Microsoft, enabling the dream of a computer on every desk and in every home, making the leap online, becoming the target of rivals and governments around the world, suffering security breaches, missing out on mobile, and expanding to the cloud, the fate of Windows depends on the tech giant’s ability to reinvent its flagship product one more time.</p>
+    <p>Microsoft is betting Windows on AI, looking to breathe new life into one of the most successful products in tech history. Just as it introduced the masses to the PC and the web, Microsoft now sees in Windows the potential to bring the full promise of AI to the world. </p>
+    <p>A lot has changed since Windows debuted in 1985 as a “graphical operating environment which runs on the Microsoft MS-DOS operating system.” </p>
+    <p>For one, due in large part to the success of Windows during the past four decades, the company today has vast financial resources and strategic advantages, including its own massive cloud and AI infrastructure. </p>
+    <p>But in other ways, the odds are against Microsoft as it tries to insert Windows into another revolution. </p>
+    <p>The center of gravity in software development has shifted to smartphones, the cloud, and the web. After struggling for decades to get into new areas, from phones to mixed-reality headsets, the core of the Windows business remains desktop and notebook computers. </p>
+    <p>And with the likes of Android, iOS, Chrome, AWS, and Meta serving as giant platforms in their own right, it’s not clear where the breakthrough AI apps will ultimately emerge.</p>
+    <p>Microsoft has been laying the groundwork for the new era of Windows by working with silicon manufacturers and PC makers to augment the CPU and GPU with a powerful new chip — a neural processing unit, or NPU — to run advanced AI programs directly on the machine.</p>
+    <p>But the first steps into the AI era have been shaky. Security and privacy questions delayed Microsoft’s efforts to give Windows a photographic memory with the new “Recall” feature, requiring Microsoft and other PC makers to initially launch their new Copilot+ PCs without it.</p>
+    <p>Yet the sheer footprint of Windows continues to set it apart. By one measure, Microsoft’s global share of the desktop PC market stands around 70% — down from 90% a decade ago but still maintaining a wide lead over MacOS and Linux despite the gradual decline.</p>
+    <p>This lasting presence is the outcome of a 50-year-old decision. Microsoft co-founders Bill Gates and Paul Allen chose to produce software for a range of PCs, rather than making hardware of their own. That was the defining strategy of those early years, and it’s still playing out today.</p>
+
+  </div>
+
+  <div class="tags">
+    <span>#AI</span>
+    <span>#Technology</span>
+    <span>#Gadgets</span>
+    <span>#Programming</span>
+  </div>
+  <p>Source:<b style="color: #007bff;"> news.microsoft.com</b></p>
+
+  <div class="share-buttons">
+    <a href="https://www.facebook.com/sharer/sharer.php?u=https://yourtechblog.com/daily-tech-update" class="facebook" target="_blank"><img src="E:\blog\icons\facebook.png" alt="Facebook"/></a>
+    <a href="https://twitter.com/intent/tweet?url=https://yourtechblog.com/daily-tech-update&text=Check out this amazing tech update!" class="twitter" target="_blank"><img src="E:\blog\icons\twitter.png" alt="Twitter"/></a>
+    <a href="https://www.linkedin.com/shareArticle?mini=true&url=https://yourtechblog.com/daily-tech-update" class="linkedin" target="_blank"><img src="E:\blog\icons\linkedin.png" alt="Linkedin"/></a>
+    <a href="https://api.whatsapp.com/send?text=Check out this amazing tech update: https://yourtechblog.com/daily-tech-update" class="whatsapp" target="_blank"><img src="E:\blog\icons\whatsapp.png" alt="whatsapp"/></a>
+  </div>
+  </div>
+</div>
+
+<footer>
+  &copy; 2024 CodePro. All rights reserved.
+</footer>
+
+</body>
+</html>

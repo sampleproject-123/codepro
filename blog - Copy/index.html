@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CodePro</title>
+    <link rel="icon" type="image/png" href="E:\blog\icons\logo1.png">
+    <link rel="stylesheet" href="style.css">
+   
+    
+</head>
+<body>
+     <!-- Splash Screen -->
+     <div id="splash-screen">
+        <div class="logo-container">
+            <script src="https://unpkg.com/@dotlottie/player-component@2.7.12/dist/dotlottie-player.mjs" type="module"></script>
+<dotlottie-player src="https://lottie.host/87e095b2-f83e-4a20-804c-3be538d2ecdf/R72orRaCqQ.lottie" background="transparent" speed="1" style="width: 500px; height: 500px;align-items: center;" loop autoplay></dotlottie-player>
+            
+        </div>
+    </div>
+    <div class="bubble-container"></div>
+    
+    <header class="responsive">
+        <div class="logo"> 
+            <div class="logo-container">
+                <div class="line"></div>
+                <div class="triangle"></div>
+            </div>
+           
+            <span class="code">Code</span><span class="pro">Pro</span> 
+        </div>
+        <button class="menu-toggle" aria-label="Toggle menu">☰</button>
+        <nav class="navigation">
+            <ul>
+                <li><a href="E:\blog-copy\index.html">Home</a></li>
+                <li><a href="E:\blog-copy\dailyupdates\dailyupdates.html">Daily Updates</a></li>
+                <li><a href="E:\blog-copy\featuredarticles\featuredarticles.html">Featured Articles</a></li>
+                <li><a href="E:\blog-copy\about\about.html">About</a></li>
+                <li><a href="E:\blog-copy\contact\contact.html">Contact</a></li>
+               <label class="switch">
+                    <input type="checkbox" id="modeToggle"> 
+                   <span class="slider">
+       
+               </span> 
+               </label>
+            </ul>
+        </nav>
+      
+    </header>
+    
+    <main>
+        
+        <div class="search-container">
+            <input type="text" id="search-input" placeholder="Search articles...">
+            <button id="search-btn">🔍</button>
+          </div>
+          <ul class="suggestions" id="suggestions"></ul>
+          
+          <script src="search.js"></script>
+         
+            <section class="daily-updates">
+                <h2>Daily Updates</h2>
+                <article class="update-block">
+                    <h3>Latest Tech News</h3>
+                    <p>Stay updated with the latest developments in technology. From AI advancements to the newest gadgets, we've got you covered!</p>
+                    <a href="E:\blog-copy\dailyupdates\dailyupdates.html" class="read-more-btn">Read More</a>
+                    
+                </article>
+            </section>
+    
+            <!-- Featured Articles -->
+            <section class="featured-articles">
+                <h2>Featured Articles</h2>
+    
+                <article class="article-block">
+                    <h3>Understanding AI and Machine Learning</h3>
+                    <p>Explore the world of AI and Machine Learning, and how these technologies are transforming industries globally.</p>
+                    <a href="E:\blog-copy\featuredarticles\ai-machine-learning.html" class="read-more-btn">Read More</a>
+                </article>
+    
+                <article class="article-block">
+                    <h3>The Future of Quantum Computing</h3>
+                    <p>Delve into the fascinating realm of Quantum Computing and its potential to revolutionize technology as we know it.</p>
+                    <a href="E:\blog-copy\featuredarticles\quantum-computing.html" class="read-more-btn">Read More</a>
+                </article>
+            </section>
+    </main>
+    <script src="index_script.js"></script>
+    
+    <footer>
+        <p>&copy; 2024 CodePro. All rights reserved.</p>
+    </footer>
+</body>
+</html>

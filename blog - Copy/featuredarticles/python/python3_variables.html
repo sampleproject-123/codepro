@@ -1,0 +1,570 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Python Variables</title>
+    <link rel="icon" type="image/png" href="E:\blog\icons\logo1.png">
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+        const toggleSwitch = document.getElementById('modeToggle');
+        const currentTheme = localStorage.getItem('theme');
+    
+        if (currentTheme) {
+            document.body.classList.add(currentTheme);
+            if (currentTheme === 'dark-mode') {
+                toggleSwitch.checked = true;
+            }
+        }
+    
+        toggleSwitch.addEventListener('change', function() {
+            if (this.checked) {
+                document.body.classList.add('dark-mode');
+                document.body.classList.remove('light-mode');
+                localStorage.setItem('theme', 'dark-mode');
+            } else {
+                document.body.classList.add('light-mode');
+                document.body.classList.remove('dark-mode');
+                localStorage.setItem('theme', 'light-mode');
+            }
+        });
+    });
+    document.addEventListener('DOMContentLoaded', function() {
+    const bubbleContainer = document.querySelector('.bubble-container');
+
+    function createBubble() {
+        const bubble = document.createElement('div');
+        bubble.className = 'bubble';
+
+        const size = Math.random() * 70 + 20 + 'px';
+        bubble.style.width = size;
+        bubble.style.height = size;
+        bubble.style.left = Math.random() * 100 + '%';
+        bubble.style.animationDuration = Math.random() * 5 + 10 + 's';
+        bubble.style.animationTimingFunction = 'cubic-bezier(0.36, 0.45, 0.63, 0.53)';
+
+        bubbleContainer.appendChild(bubble);
+
+        setTimeout(() => {
+            bubble.remove();
+        }, 15000);
+    }
+
+    setInterval(createBubble, 500);
+});
+document.addEventListener('DOMContentLoaded', function () {
+    // Select the menu toggle button and navigation
+    const menuToggle = document.querySelector('.menu-toggle');
+    const navigation = document.querySelector('.navigation');
+
+    // Add click event listener to toggle menu visibility
+    menuToggle.addEventListener('click', () => {
+        navigation.classList.toggle('active');
+    });
+});
+
+
+
+    
+      </script>
+    <style>
+        :root { --bg-color-light: #ffffff; 
+    --text-color-light: #000000; 
+    --bg-color-dark: #121212; 
+    --text-color-dark: #ffffff; 
+    --header-bg-light: #f0f0f0; 
+    --header-bg-dark: #1a1a1a;
+    --blue-color: #2196F3;
+    --line-color: #000000; 
+    --shadow-color-light: 0 2px 5px rgba(0, 0, 0,0.2);
+    --shadow-color-dark: 0 2px 5px rgb(255, 255, 255,0.2);
+     }
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            background-color: var(--bg-color-light);
+            color: var(--text-color-light);
+           
+        }
+
+        header {
+    display:flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1% 2%;
+    background-color: var(--bg-color-light);
+    color: var(--text-color-light);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 1);
+    
+    margin: 20px;
+    
+}
+.menu-toggle {
+    display: none;
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+    color: var(--text-color-light);
+}
+
+
+nav ul {
+    display:flex;
+    flex-grow: 3;
+    justify-content: space-around;
+}
+
+nav ul li {
+    margin: 0 72px;
+    display:flex;
+ 
+   
+}
+
+nav ul li a {
+    font-size: 16px;
+    font-weight: 500;
+    display: flex;
+    background-color: var(--bg-color-light);
+    color: var(--text-color-light);
+    padding: 5px 10px;
+    transition: color 0.3s, background-color 0.3s;
+}
+
+nav ul li a:hover {
+    color: #fff;
+    background-color: #007BFF;
+    
+    border-radius: 4px;
+}
+
+
+        .container {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: var(--bg-color-light);
+            color: var(--text-color-light);
+            border-radius: 8px;
+            box-shadow:var(--shadow-color-light);
+        }
+
+        h2 {
+            color: #007bff;
+        }
+
+        code {
+          
+            padding: 2px 4px;
+            border-radius: 4px;
+            font-family: Consolas, Monaco, monospace;
+        }
+
+        pre {
+           
+            background-color:#ffffff;
+            padding: 10px;
+            border-radius: 4px;
+            overflow-x: auto;
+            box-shadow: var(--shadow-color-light);
+     
+        }
+        .comment{
+            color:red;  
+
+        }
+        .actual-code{
+            color:blue
+        }
+
+        a {
+            color: #007bff;
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+        
+
+.bubble-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    overflow: hidden;
+}
+
+.bubble {
+    position: absolute;
+    bottom: -100px;
+    background-color:#007BFF; /* Light blue color */
+    border-radius: 50%;
+    opacity: 0.6;
+    animation: move 15s infinite;
+}
+
+@keyframes move {
+    from {
+        transform: translateY(0) scale(1);
+    }
+    to {
+        transform: translateY(-120vh) scale(0);
+    }
+}
+
+header .logo 
+{ font-size: 24px;
+    font-weight: bold; 
+    color: var(--text-color-light); margin-right: 20px;} 
+.logo { display: flex; align-items: center; } 
+
+header .logo .code { color: var(--blue-color); }
+ header .logo .pro { color: var(--text-color-light); }
+/* Logo Container */
+.logo-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5px; /* Space between the line and triangle */
+}
+
+/* Black Line */
+.line {
+    width: 40px;
+    height: 4px;
+    background-color: var(--line-color);/* Black color */
+    border-radius: 2px;
+}
+
+/* Inverted Triangle */
+.triangle {
+    width: 0;
+    height: 0;
+    border-left: 20px solid transparent;
+    border-right: 20px solid transparent;
+    border-top: 30px solid #2196f3; /* Blue color */
+}
+
+
+
+           
+/* Dark mode styles */
+body.dark-mode {
+    --bg-color-light: var(--bg-color-dark);
+    --text-color-light: var(--text-color-dark);
+    --header-bg-light: var(--header-bg-dark);
+    --line-color: #ffffff;
+    --shadow-color-light:var(--shadow-color-dark);
+    
+}
+
+
+/* Toggle switch styles */
+.switch  {
+    position: absolute;
+    top: 16%;
+    right: 2%;
+    display: inline-block;
+    width: 60px;
+    height: 34px;
+    
+}
+
+.switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    transition: .4s;
+    border-radius: 34px;
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 26px;
+    width: 26px;
+    left: 4px;
+    bottom: 4px;
+    background-color: white;
+    transition: .4s;
+    border-radius: 50%;
+}
+
+input:checked + .slider {
+    background-color: #2196F3;
+}
+
+input:checked + .slider:before {
+    transform: translateX(26px);
+}
+
+
+        footer {
+            text-align: center;
+           
+            background-color: var(--bg-color-light);
+            color: var(--text-color-light);
+        }
+        .read-more-btn-next {
+    display: inline-block;
+    position:relative;
+    background-color: #007BFF;
+    color: #fff;
+    padding: 10px 30px;
+    left:78%;
+    font-size: 14px;
+    font-weight: bold;
+    text-align: center;
+    border-radius: 4px;
+    transition: background-color 0.3s;
+}
+
+.read-more-btn-next:hover {
+    background-color: #0056b3;
+}       
+.read-more-btn-prev {
+    display: inline-block;
+    position:relative;
+    background-color: #007BFF;
+    color: #fff;
+    padding: 10px 15px;
+   
+    font-size: 14px;
+    font-weight: bold;
+    text-align: center;
+    border-radius: 4px;
+    transition: background-color 0.3s;
+}
+
+.read-more-btn-next:hover {
+    background-color: #0056b3;
+}   
+              
+/* Responsive styles for screens smaller than 480px */
+@media (max-width: 480px) {
+    header {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+  
+    .menu-toggle {
+      display: inline-block;
+      position:absolute;
+      left:85% ;
+      top:3%;/* Show menu toggle button */
+    cursor: pointer;
+    }
+  
+    .navigation {
+      width: 100%;
+      display: none; /* Hide navigation by default */
+      flex-direction: column;
+      background-color: var(--bg-color-light);
+    }
+  
+    .navigation.active {
+      display:flex; /* Show navigation when active */
+    }
+  
+    .navigation ul {
+      flex-direction: column; /* Arrange items vertically */
+      gap: 0; /* Remove space between items */
+      padding: 0;
+    }
+  
+    .navigation ul li {
+      border-bottom: 1px solid var(--border-color-light);
+    }
+  
+    .navigation ul li a {
+      display: block;
+      padding: 10px;
+      font-size: 0.9rem;
+      color: var(--text-color-light);
+    }
+  
+    .navigation ul li a:hover {
+      background-color: var(--highlight-color-light); /* Highlight on hover */
+      color: var(--bg-color-light);
+    }
+    .switch {
+        position: absolute;
+        top: 10%;
+        right: 7%;
+        display: inline-block;
+        width: 60px;
+        height: 34px;
+    }
+.read-more-btn-prev{
+    position: absolute;
+    left:10%
+}
+
+
+   
+  }
+
+
+    </style>
+</head>
+<body>
+    <div class="bubble-container"></div>
+    <header class="responsive">
+        <div class="logo"> 
+            <div class="logo-container">
+                <div class="line"></div>
+                <div class="triangle"></div>
+            </div>
+           
+            <span class="code">Code</span><span class="pro">Pro</span> 
+        </div>
+        <button class="menu-toggle" aria-label="Toggle menu">☰</button>
+        <nav class="navigation">
+            <ul>
+                <li><a href="E:\blog\index.html">Home</a></li>
+                <li><a href="E:\blog\dailyupdates\dailyupdates.html">Daily Updates</a></li>
+                <li><a href="E:\blog\featuredarticles\featuredarticles.html">Featured Articles</a></li>
+                <li><a href="E:\blog\about\about.html">About</a></li>
+                <li><a href="E:\blog\contact\contact.html">Contact</a></li>
+               <label class="switch">
+                    <input type="checkbox" id="modeToggle"> 
+                   <span class="slider">
+       
+               </span> 
+               </label>
+            </ul>
+        </nav>
+      
+    </header>
+    <h1 style="text-align: center;color:#007bff;">Python Variables</h1>
+    <div class="container">
+       
+        <p>
+            A Variable in Python is a symbolic name that serves as a reference or pointer to an object. Variables are used to store data values that can be used and manipulated in a program. Python variables are dynamic, meaning you don't need to explicitly declare their type, as Python automatically determines it at runtime.
+
+        </p>
+
+        <h2>Key Features of Python Variables</h2>
+        <ol>
+            <li><strong>Dynamic Typing:</strong> 
+            <ul>
+                <li>You don't need to declare the type of a variable explicitly.</li>
+                <li>The type is inferred from the value assigned.</li>
+            </ul>
+            </li>
+            <pre>
+<code class="actual-code">x=10</code><code class="comment" ># Integer</code>
+<code class="actual-code">x=<j style="color: green;">"Hello"</j></code><code class="comment" ># String</code>
+<code class="actual-code">x=3.45</code><code class="comment" ># Float</code></pre>
+
+            <li><strong>Mutable and Immutable Types:</strong>
+            <ul>
+                <li><b>Mutable types:</b> The value of the object can be changed (e.g., <code>list, dict, set</code>).</li>
+<li><b>Immutable types:</b> The value of the object cannot be changed (e.g., <code>int, str, tuple</code>).</li>
+
+            </ul>
+            </li>
+            <li><strong>No Explicit Declaration:</strong><ul><li>Variables are created when a value is assigned to them.</li></ul> 
+            <pre><code class="actual-code">x = 10</code></pre>
+
+            </li>
+
+        </ol>
+
+        <h2>Name Rules for Variables</h2>
+        <ul>
+            <li>A variable must start with a letter or an underscore (_).</li>
+            <li>A variable cannot start with a number.</li>
+            <li>A variable van only contain alphanumeric characters and underscores.</li>
+            <li>Reserved keywords like <code>if, else, for, while</code>, etc. should not be used.</li>
+
+
+        </ul>
+
+        <h2>Working With Variables</h2>
+        <ol>
+            <li>
+                <strong>Multiple Assignments:</strong>You can assign values to multiple variables in one line.
+                <pre><code class="actual-code">x,y,z = 10,20,30</code>
+<code class="comment"># assigns x=10 y=20 z=30</code></pre>
+            </li>
+            <li>
+                <strong>Reassignment:</strong><ul><li>A variable can be reassigned to a new value, even of a different type.</li></ul>
+                <pre>
+<code class="actual-code">x = 10</code>
+<code class="actual-code">x =<j style="color:green"> "Python Tutorial"</j></code><code class="comment"># x is a string now</code></pre>
+            </li>
+            <li>
+                <strong>Swapping Variables:</strong><ul><li>Python allows easy swapping of variables.</li></ul>
+                <pre><code class="actual-code">x = 10</code>
+<code class="actual-code">y = 20</code>
+<code class="actual-code">x,y = y,x</code>
+<code class="comment"># now x=20 and y=10  x and y values are swapped</code></pre>
+            </li>
+        </ol>
+      
+        <h2>Global and Local Variables</h2>
+        
+        <ul>
+            <li><strong>Global Variables:</strong></li>
+                Variables that are created outside of a function are known as global variables.
+
+                Global variables can be used by everyone, both inside of functions and outside.
+            Global variables are accessible throughout the program
+            <li><strong>Local Variables:</strong></li>Variables that are created within the function are known as local variables.
+            A local variable is accessible only within a function.
+            <p>If you create a variable with the same name inside a function, this variable will be local, and can only be used inside the function. The global variable with the same name will remain as it was, global and with the original value.</p>
+            <pre><code class="actual-code">x = <j style="color:green">"I am global variable"</j></code>
+<code class="actual-code"><j style="color:orange">def</j> myfun():</code>
+    <code class="actual-code">x = <j style="color:green">"I am local variable"</j></code>
+    <code class="actual-code">print(x)</code>
+<code class="actual-code">myfun()</code><code class="comment"># Output: I am local variable</code>
+<code class="actual-code">print(x)</code><code class="comment"># Output: I am global Variable</code></pre>
+<h3>global keyword: </h3>
+<p>Normally, when you create a variable inside a function, that variable is local, and can only be used inside that function.
+
+    To create a global variable inside a function, you can use the <code style="color:rgb(201, 16, 16);background-color: rgb(199, 191, 191);">global</code> keyword.</p>  
+   <pre> <code class="actual-code"><j style="color:orange">def</j> myfun():</code>
+    <code class="actual-code"><j style="color:orange">global</j> x </code>
+    <code class="actual-code">x = <j style="color:green">"I am local variable"</j></code>
+    
+<code class="actual-code">myfun()</code><code class="comment"># Output: I am local variable</code>
+<code class="actual-code">print(x)</code><code class="comment"># Output: I am local Variable</code></pre>            
+           
+        </ul>
+
+        <h2>Common Operations</h2>
+       <ul>
+        <li><strong>Checking Data Type:</strong></li><code>type</code> keyword is used to return the data type of a variable
+        <pre> <code class="actual-code">x = 10</code>
+        <code class="actual-code">print<j style="color:orange">type</j>(x)</code><code class="comment"># output : class 'int' </code>
+        <code class="actual-code">y = <j style="color:green">"Python Tutorial"</code>
+        <code class="actual-code">print<j style="color:orange">type</j>(y)</code><code class="comment"># output : class 'string' </code></pre>
+<li><strong>Deleting variables:</strong></li><code>del</code> keyword is used to delete a variable
+<pre><code clas="actual-code"><j style="color:orange">del</j> x</code></pre>
+       </ul>
+       <a href="E:\blog\featuredarticles\python\python2_syntax.html" class="read-more-btn-prev">Previous</a>
+       <a href="E:\blog\featuredarticles\python\python4_datatypes.html" class="read-more-btn-next">Next</a>
+           </div>
+
+    <footer>
+        &copy; 2024 Tech Blog. All Rights Reserved.
+    </footer>
+</body>
+</html>

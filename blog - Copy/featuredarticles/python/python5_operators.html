@@ -1,0 +1,740 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Python Operators</title>
+    
+    <link rel="icon" type="image/png" href="E:\blog\icons\logo1.png">
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+        const toggleSwitch = document.getElementById('modeToggle');
+        const currentTheme = localStorage.getItem('theme');
+    
+        if (currentTheme) {
+            document.body.classList.add(currentTheme);
+            if (currentTheme === 'dark-mode') {
+                toggleSwitch.checked = true;
+            }
+        }
+    
+        toggleSwitch.addEventListener('change', function() {
+            if (this.checked) {
+                document.body.classList.add('dark-mode');
+                document.body.classList.remove('light-mode');
+                localStorage.setItem('theme', 'dark-mode');
+            } else {
+                document.body.classList.add('light-mode');
+                document.body.classList.remove('dark-mode');
+                localStorage.setItem('theme', 'light-mode');
+            }
+        });
+    });
+    document.addEventListener('DOMContentLoaded', function() {
+    const bubbleContainer = document.querySelector('.bubble-container');
+
+    function createBubble() {
+        const bubble = document.createElement('div');
+        bubble.className = 'bubble';
+
+        const size = Math.random() * 70 + 20 + 'px';
+        bubble.style.width = size;
+        bubble.style.height = size;
+        bubble.style.left = Math.random() * 100 + '%';
+        bubble.style.animationDuration = Math.random() * 5 + 10 + 's';
+        bubble.style.animationTimingFunction = 'cubic-bezier(0.36, 0.45, 0.63, 0.53)';
+
+        bubbleContainer.appendChild(bubble);
+
+        setTimeout(() => {
+            bubble.remove();
+        }, 15000);
+    }
+
+    setInterval(createBubble, 500);
+});
+document.addEventListener('DOMContentLoaded', function () {
+    // Select the menu toggle button and navigation
+    const menuToggle = document.querySelector('.menu-toggle');
+    const navigation = document.querySelector('.navigation');
+
+    // Add click event listener to toggle menu visibility
+    menuToggle.addEventListener('click', () => {
+        navigation.classList.toggle('active');
+    });
+});
+    
+      </script>
+    <style>
+        :root { --bg-color-light: #ffffff; 
+    --text-color-light: #000000; 
+    --bg-color-dark: #121212; 
+    --text-color-dark: #ffffff; 
+    --header-bg-light: #f0f0f0; 
+    --header-bg-dark: #1a1a1a;
+    --blue-color: #2196F3;
+    --line-color: #000000; 
+    --shadow-color-light: 0 2px 5px rgba(0, 0, 0,0.2);
+    --shadow-color-dark: 0 2px 5px rgb(255, 255, 255,0.2);
+     }
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            background-color: var(--bg-color-light);
+            color: var(--text-color-light);
+           
+        }
+
+        header {
+    display:flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1% 2%;
+    background-color: var(--bg-color-light);
+    color: var(--text-color-light);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 1);
+    
+    margin: 20px;
+    
+}
+.menu-toggle {
+    display: none;
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+    color: var(--text-color-light);
+}
+
+
+nav ul {
+    display:flex;
+    flex-grow: 3;
+    justify-content: space-around;
+}
+
+nav ul li {
+    margin: 0 72px;
+    display:flex;
+ 
+   
+}
+
+nav ul li a {
+    font-size: 16px;
+    font-weight: 500;
+    display: flex;
+    background-color: var(--bg-color-light);
+    color: var(--text-color-light);
+    padding: 5px 10px;
+    transition: color 0.3s, background-color 0.3s;
+}
+
+nav ul li a:hover {
+    color: #fff;
+    background-color: #007BFF;
+    
+    border-radius: 4px;
+}
+
+        .container {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: var(--bg-color-light);
+            color: var(--text-color-light);
+            border-radius: 8px;
+            box-shadow:var(--shadow-color-light);
+        }
+
+        h2 {
+            color: #007bff;
+        }
+
+        code {
+          
+            padding: 2px 4px;
+            border-radius: 4px;
+            font-family: Consolas, Monaco, monospace;
+        }
+
+        pre {
+           
+            background-color:#ffffff;
+            padding: 10px;
+            border-radius: 4px;
+            overflow-x: auto;
+            box-shadow: var(--shadow-color-light);
+     
+        }
+        .comment{
+            color:red;  
+
+        }
+        .actual-code{
+            color:blue
+        }
+
+        a {
+            color: #007bff;
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+        z{
+            color:rgb(180, 0, 180) ;
+        }
+
+.bubble-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    overflow: hidden;
+}
+
+.bubble {
+    position: absolute;
+    bottom: -100px;
+    background-color:#007BFF; /* Light blue color */
+    border-radius: 50%;
+    opacity: 0.6;
+    animation: move 15s infinite;
+}
+
+@keyframes move {
+    from {
+        transform: translateY(0) scale(1);
+    }
+    to {
+        transform: translateY(-120vh) scale(0);
+    }
+}
+
+header .logo 
+{ font-size: 24px;
+    font-weight: bold; 
+    color: var(--text-color-light); margin-right: 20px;} 
+.logo { display: flex; align-items: center; } 
+
+header .logo .code { color: var(--blue-color); }
+ header .logo .pro { color: var(--text-color-light); }
+/* Logo Container */
+.logo-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5px; /* Space between the line and triangle */
+}
+
+/* Black Line */
+.line {
+    width: 40px;
+    height: 4px;
+    background-color: var(--line-color);/* Black color */
+    border-radius: 2px;
+}
+
+/* Inverted Triangle */
+.triangle {
+    width: 0;
+    height: 0;
+    border-left: 20px solid transparent;
+    border-right: 20px solid transparent;
+    border-top: 30px solid #2196f3; /* Blue color */
+}
+
+
+table {
+            border-collapse: collapse;
+            width: 100%;
+            position: relative;
+            
+        }
+         td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+        th {
+            background-color:#007BFF;
+            font-weight: bold;
+            text-align: center;
+        }
+           
+/* Dark mode styles */
+body.dark-mode {
+    --bg-color-light: var(--bg-color-dark);
+    --text-color-light: var(--text-color-dark);
+    --header-bg-light: var(--header-bg-dark);
+    --line-color: #ffffff;
+    --shadow-color-light:var(--shadow-color-dark);
+    
+}
+
+
+/* Toggle switch styles */
+.switch  {
+    position: absolute;
+    top: 16%;
+    right: 2%;
+    display: inline-block;
+    width: 60px;
+    height: 34px;
+    
+}
+
+.switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    transition: .4s;
+    border-radius: 34px;
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 26px;
+    width: 26px;
+    left: 4px;
+    bottom: 4px;
+    background-color: white;
+    transition: .4s;
+    border-radius: 50%;
+}
+
+input:checked + .slider {
+    background-color: #2196F3;
+}
+
+input:checked + .slider:before {
+    transform: translateX(26px);
+}
+
+
+        footer {
+            text-align: center;
+           
+            background-color: var(--bg-color-light);
+            color: var(--text-color-light);
+        }
+       
+        .read-more-btn-next {
+    display: inline-block;
+    position:relative;
+    background-color: #007BFF;
+    color: #fff;
+    padding: 10px 30px;
+    left:78%;
+    font-size: 14px;
+    font-weight: bold;
+    text-align: center;
+    border-radius: 4px;
+    transition: background-color 0.3s;
+}
+
+.read-more-btn-next:hover {
+    background-color: #0056b3;
+}       
+.read-more-btn-prev {
+    display: inline-block;
+    position:relative;
+    background-color: #007BFF;
+    color: #fff;
+    padding: 10px 15px;
+   
+    font-size: 14px;
+    font-weight: bold;
+    text-align: center;
+    border-radius: 4px;
+    transition: background-color 0.3s;
+}
+
+.read-more-btn-next:hover {
+    background-color: #0056b3;
+}   
+             
+/* Responsive styles for screens smaller than 480px */
+@media (max-width: 480px) {
+   
+    header {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+    .menu-toggle {
+      display: inline-block;
+      position:absolute;
+      left:85% ;
+      top:3%;/* Show menu toggle button */
+    cursor: pointer;
+    }
+  
+    .navigation {
+      width: 100%;
+      display: none; /* Hide navigation by default */
+      flex-direction: column;
+      background-color: var(--bg-color-light);
+    }
+  
+    .navigation.active {
+      display:flex; /* Show navigation when active */
+    }
+  
+    .navigation ul {
+      flex-direction: column; /* Arrange items vertically */
+      gap: 0; /* Remove space between items */
+      padding: 0;
+    }
+  
+    .navigation ul li {
+      border-bottom: 1px solid var(--border-color-light);
+    }
+  
+    .navigation ul li a {
+      display: block;
+      padding: 10px;
+      font-size: 0.9rem;
+      color: var(--text-color-light);
+    }
+  
+    .navigation ul li a:hover {
+      background-color: var(--highlight-color-light); /* Highlight on hover */
+      color: var(--bg-color-light);
+    }
+    .switch {
+        position: absolute;
+        top: 10%;
+        right: 7%;
+        display: inline-block;
+        width: 60px;
+        height: 34px;
+    }
+  
+    .read-more-btn{
+        left:80%;
+    }
+    table {
+            border-collapse: collapse;
+            width: 100%;
+            position: relative;
+        }
+         td {
+            border: 1px solid #ddd;
+            padding: 4px;
+            text-align: left;
+        }
+        th {
+            background-color:#007bff;
+            font-weight: bold;
+            text-align: center;
+        }
+        
+        .read-more-btn-prev{
+    position: absolute;
+    left:10%
+}
+  }
+
+
+    </style>
+</head>
+<body>
+    <div class="bubble-container"></div>
+    <header class="responsive">
+        <div class="logo"> 
+            <div class="logo-container">
+                <div class="line"></div>
+                <div class="triangle"></div>
+            </div>
+           
+            <span class="code">Code</span><span class="pro">Pro</span> 
+        </div>
+        <button class="menu-toggle" aria-label="Toggle menu">☰</button>
+        <nav class="navigation">
+            <ul>
+                <li><a href="E:\blog\index.html">Home</a></li>
+                <li><a href="E:\blog\dailyupdates\dailyupdates.html">Daily Updates</a></li>
+                <li><a href="E:\blog\featuredarticles\featuredarticles.html">Featured Articles</a></li>
+                <li><a href="E:\blog\about\about.html">About</a></li>
+                <li><a href="E:\blog\contact\contact.html">Contact</a></li>
+               <label class="switch">
+                    <input type="checkbox" id="modeToggle"> 
+                   <span class="slider">
+       
+               
+               </label>
+            </ul>
+        </nav>
+      
+    </header>
+    <h1 style="text-align: center;color:#007bff">Operators in Python</h1>
+
+    <div class="container">
+        <p>
+            In Python, operators are special symbols or keywords used to perform operations on variables and values. Python supports several types of operators, which can be broadly categorized as follows:
+
+        </p>
+     <h2>1. Arithmetic Operators</h2>
+                <p>These operators perform basic mathematical operations.Let us declare two variables <code>x and y</code> and execute arithmetic operations on them.</p>
+    <pre><code class="actual-code">x = 10</code>
+<code class="actual-code">y = 20</code></pre>
+      <ul>
+        <li><strong>Addition</strong> (<code>+</code>) :
+        <pre>
+<code class="actual-code"><z>print(</z>x + y<z>)</z></code><code class="comment">  # adds x and y returns 30</code></pre></li>
+<li><strong>Subtraction</strong> (<code>-</code>) :
+    <pre>
+<code class="actual-code"><z>print(</z>x - y<z>)</z></code><code class="comment">  # subtracts y from x returns -10</code></pre></li>
+<li><strong>Multiplication</strong> (<code>*</code>) :
+    <pre>
+<code class="actual-code"><z>print(</z>x * y<z>)</z></code><code class="comment">  # multiplies x and y returns 200</code></pre></li>
+<li><strong>Division</strong> (<code>/</code>) :
+    <pre>
+<code class="actual-code"><z>print(</z>y / x<z>)</z></code><code class="comment">  # divides y by x returns 2</code></pre></li>
+<li><strong>Modulus</strong> (<code>%</code>) :
+    <pre>
+<code class="actual-code"><z>print(</z>y % x<z>)</z></code><code class="comment">  # returns the remainder of y divided by x which is 0</code></pre></li>
+<li><strong>Floor Division</strong> (<code>//</code>) :
+    <pre>
+<code class="actual-code">x = 5</code>
+<code class="actual-code">y = 2</code>
+<code class="actual-code"><z>print(</z>x // y<z>)</z></code><code class="comment"> # returns the floor value of x divided by y which is 2 remove the values after decimal point</code></pre></li>
+
+<li><strong>Exponentiation</strong> (<code>**</code>) :
+    <pre>
+<code class="actual-code">x = 5</code>
+<code class="actual-code">y = 2</code>
+<code class="actual-code"><z>print(</z>x ** y<z>)</z></code><code class="comment"> # Returns x raised to the power of y returns 25</code></pre></li>
+
+</ul>     
+<h2>2. Assignment Operators</h2>
+<p>Assignment operators are used to assign values to variables.There are several types in it which are as follows:</p>
+<table border="2">
+<tr>
+    <th>Operator</th>
+    <th>Example</th>    
+    <th>Represents</th>
+</tr>
+<tr>
+    <td>=</td>
+    <td><code>x = 10</code></td>
+    <td><code>x = 10</code></td>
+</tr>
+<tr>
+    <td>+=</td>
+    <td><code>x += 10</code></td>
+    <td><code>x = x + 10</code></td>
+</tr>  
+<tr>
+    <td>-=</td>
+    <td><code>x -= 10</code></td>
+    <td><code>x = x - 10</code></td>
+</tr> 
+<tr>
+    <td>*=</td>
+    <td><code>x *= 10</code></td>
+    <td><code>x = x * 10</code></td>
+</tr>
+<tr>
+    <td>/=</td>
+    <td><code>x /= 10</code></td>
+    <td><code>x = x / 10</code></td>
+</tr>
+<tr>
+    <td>%=</td>
+    <td><code>x %= 10</code></td>
+    <td><code>x = x % 10</code></td>
+</tr>
+<tr>
+    <td>//=</td>
+    <td><code>x //= 10</code></td>
+    <td><code>x =x // 10</code></td>
+</tr> 
+<tr>
+    <td>**=</td>
+    <td><code>x **= 10</code></td>
+    <td><code>x = x ** 10</code></td>
+</tr>
+<tr>
+    <td>&=</td>
+    <td><code>x &= 10</code></td>
+    <td><code>x = x & 10</code></td>
+</tr>     
+<tr>
+    <td>|=</td>
+    <td><code>x |= 10</code></td>
+    <td><code>x = x | 10</code></td>
+</tr>    
+<tr>
+    <td>^=</td>
+    <td><code>x ^= 10</code></td>
+    <td><code>x = x ^ 10</code></td>
+</tr> 
+<tr>
+    <td>>>=</td>
+    <td><code>x >>= 10</code></td>
+    <td><code>x = x >> 10</code></td>
+</tr> 
+<tr>
+    <td><<=</td>
+    <td><code>x <<= 10</code></td>
+    <td><code>x = x << 10</code></td>
+</tr> 
+<tr>
+    <td>:=</td>
+    <td><code><z>print(</z>x := 10<z>)</z></code></td>
+    <td><code>x = 10</code><br>
+<code><z>print(</z>x<z>)</z></code>
+    </td>
+</tr> 
+</table>  
+<h2>3. Relational Operators</h2>
+<p>Relational operators are used to compare the values of two variables which are also known as comparision operators</p>
+<ul>
+    <li>
+        <code>==</code> : <strong>(Equal to)</strong></li>
+        <pre><code class="actual-code">x == y</code><code class="comment"># Returns True if x is equal to y</code></pre>
+    </li>
+    <li>
+        <code>!=</code> : <strong>(Not Equal to)</strong></li>
+        <pre><code class="actual-code">x != y</code> <code class="comment"># Returns True if x is not equal to y</code></pre>
+    </li>
+    <li>
+        <code>></code> : <strong>(Greater than)</strong></li>
+        <pre><code class="actual-code">x > y</code> <code class="comment"># Returns True if x is greater than y</code></pre>
+    </li>
+    <li>
+        <code><</code> : <strong>(Less than)</strong></li>
+        <pre><code class="actual-code">x < y </code><code class="comment"># Returns True if x is less than y</code></pre>
+    </li>
+    <li>
+        <code>>=</code> : <strong>(Greater than or equal to)</strong></li>
+        <pre><code class="actual-code">x >= y </code><code class="comment"># Returns True if x is greater than or equals to y</code></pre>
+    </li>
+    <li>
+        <code><=</code> : <strong>(Less than or equal to)</strong></li>
+        <pre><code class="actual-code">x <= y </code><code class="comment"># Returns True if x is less than or equals to y</code></pre>
+    </li>
+</ul>
+
+<h2>4. Logical Operators</h2>
+<p>These operators are used to combine two or more conditional statements (further topic)</p>
+<ul>
+    <li>
+        <code>and</code>: <strong>Logical AND</strong>
+        <pre><code>x <z>and</z> y</code><code class="comment">  # Returns True is x and y both are True</code></pre>
+    </li>
+    <li>
+        <code>or</code>: <strong>Logical OR</strong>
+        <pre><code>x <z>or</z> y</code><code class="comment">  # Returns True if any one of  x and y are True</code></pre>
+    </li>
+    <li>
+        <code>not</code>: <strong>Logical NOT</strong>
+        <pre><code><z>not</z> x</code><code class="comment">  # Returns True if x is false</code></pre>
+    </li>
+</ul>
+<h2>5. Bitwise Operators</h2>
+<p>Bitwise operators are used to perform operations on bits and comparing binary numbers.Before working with Bitwise operators you should have an overview on binary numbers and their operations.</p>
+<ul>
+    <li>
+        <code>&</code> : <strong>Bitwise AND</strong>
+        <p>The <code>&</code> operator compares each bit and set it to 1 if both are 1, otherwise it is set to 0</p>
+        <pre><code class="actual-code">x = 2</code>
+<code class="actual-code">y = 3</code>
+<code class="comment"><z>print(</z>x & y<z>)</z></code><code class="comment"># returns the output 2</code>
+<code class="comment"># binary of 2 is '10' and binary of 3 is '11'</code>
+<code class="comment"># result of '10' & '11' is '10' which is binary of 2 </code></pre>
+    </li>
+    <li>
+        <code>|</code> : <strong>Bitwise OR</strong>
+        <p>The <code>|</code> operator compares each bit and set it to 1 if one or both is 1, otherwise it is set to 0</p>
+        <pre><code class="actual-code">x = 2</code>
+<code class="actual-code">y = 3</code>
+<code class="comment"><z>print(</z>x | y<z>)</z></code><code class="comment"># returns the output 3</code>
+<code class="comment"># binary of 2 is '10' and binary of 3 is '11'</code>
+<code class="comment"># result of '10' | '11' is '11' which is binary of 3 </code></pre>
+    </li>
+    <li>
+        <code>~</code> : <strong>Bitwise NOT</strong>
+        <p>The <code>~</code> operator inverts each bit (0 becomes 1 and 1 becomes 0).</p>
+        <pre><code class="actual-code">x = 2</code>
+
+<code class="comment"><z>print(</z>~ x<z>)</z></code><code class="comment"># returns the output -3</code>
+<code class="comment"># binary of 2 is '10' and ~ '0000000000000010' is '1111111111111101' which is binary of -3</code></pre></li>
+<li>
+    <code><<</code> : <strong>Bitwise Left Shift</strong>
+    <p>The <code><<</code> operator inserts the specified number of 0's (in this case 2) from the right and let the same amount of leftmost bits fall off</p>
+    <pre><code class="actual-code">x = 2</code>
+<code class="comment"><z>print(</z>x << 2<z>)</z></code><code class="comment"># returns the output 8</code>
+<code class="comment"># binary of 2 is '10' then '10'<< 2 results 1000 which is binary of 8 </code></pre>
+    </li>
+<li>
+    <code>>></code> : <strong>Bitwise Right Shift</strong>
+    <p>The <code>>></code> operator moves each bit the specified number of times to the right. Empty holes at the left are filled with 0's</p>
+    <pre><code class="actual-code">x = 2</code>
+<code class="comment"><z>print(</z>x >> 2<z>)</z></code><code class="comment"># returns the output 0</code>
+<code class="comment"># binary of 2 is '10' then '10'>> 2 results 00 which is binary of 0 </code></pre>
+    </li>
+</ul>
+<h2>6. Identity Operators</h2>
+<p>Identity Operators are used to compare the memory location of two objects, not if they are equal, but if they are actually the same object, with the same memory location</p>
+<ul>
+    <li>
+        <code>is</code> : <strong>Identity</strong>
+        <pre><code class="actual-code">x = [1,2,3]</code>
+<code class="actual-code">y = [1,2,3]</code>
+<code class="actual-code">z = x</code>
+<code class="actual-code"><z>print(</z>x is y<z>)</z></code><code class="comment"># returns False</code>
+<code class="actual-code"><z>print(</z>x is z<z>)</z></code><code class="comment"># returns True</code></pre>
+    </li>
+    <li>
+        <code>is not</code> : <strong>Non-Identity</strong>
+        <pre><code class="actual-code">x = [1,2,3]</code>
+<code class="actual-code">y = [1,2,3]</code>
+<code class="actual-code"><z>print(</z>x is not y<z>)</z></code><code class="comment"># returns True</code></pre>
+    </li>
+</ul>
+<h2>7. Membership Operators</h2>
+<p>These operators are used to test for a membership in a sequence.</p>
+<ul>
+    <li>
+        <code>in</code> : <strong>Membership</strong>
+        <p>Tests if a value is present in a sequence (such as a list, tuple, string..etc.,)</p>
+        <pre><code class="actual-code">x = [1,2,3]</code>
+<code class="actual-code"><z>print(</z>1 <j style="color:orangered">in</j> x<z>)</z></code><code class="comment"># returns True</code></pre>
+    </li>
+    <li>
+        <code>not in</code> : <strong>Non-Membership</strong>
+        <p>Tests if a value is not present in a sequence (such as a list,tuple,string..etc.,)</p>
+        <pre><code class="actual-code">x = [1,2,3]</code>
+<code class="actual-code"><z>print(</z>1 <j style="color:orangered">not in</j> x<z>)</z></code><code class="comment"># returns False</code></pre>
+                 
+    </li>
+</ul>
+<h2>Conclusion</h2>
+<p>Each of these operators allows for a wide variety of operations and interactions with data in Python, enabling the creation of complex and efficient programs.</p>
+<a href="E:\blog\featuredarticles\python\python4_datatypes.html" class="read-more-btn-prev">Previous</a>
+<a href="E:\blog\featuredarticles\python\python6_operators.html" class="read-more-btn-next">Next</a>
+</div>
+    <footer>
+        &copy; 2024 Tech Blog. All Rights Reserved.
+    </footer>
+</body>
+</html>

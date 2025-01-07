@@ -1,0 +1,537 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Python Syntax</title>
+    <link rel="icon" type="image/png" href="E:\blog\icons\logo1.png">
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+        const toggleSwitch = document.getElementById('modeToggle');
+        const currentTheme = localStorage.getItem('theme');
+    
+        if (currentTheme) {
+            document.body.classList.add(currentTheme);
+            if (currentTheme === 'dark-mode') {
+                toggleSwitch.checked = true;
+            }
+        }
+    
+        toggleSwitch.addEventListener('change', function() {
+            if (this.checked) {
+                document.body.classList.add('dark-mode');
+                document.body.classList.remove('light-mode');
+                localStorage.setItem('theme', 'dark-mode');
+            } else {
+                document.body.classList.add('light-mode');
+                document.body.classList.remove('dark-mode');
+                localStorage.setItem('theme', 'light-mode');
+            }
+        });
+    });
+    document.addEventListener('DOMContentLoaded', function() {
+    const bubbleContainer = document.querySelector('.bubble-container');
+
+    function createBubble() {
+        const bubble = document.createElement('div');
+        bubble.className = 'bubble';
+
+        const size = Math.random() * 70 + 20 + 'px';
+        bubble.style.width = size;
+        bubble.style.height = size;
+        bubble.style.left = Math.random() * 100 + '%';
+        bubble.style.animationDuration = Math.random() * 5 + 10 + 's';
+        bubble.style.animationTimingFunction = 'cubic-bezier(0.36, 0.45, 0.63, 0.53)';
+
+        bubbleContainer.appendChild(bubble);
+
+        setTimeout(() => {
+            bubble.remove();
+        }, 15000);
+    }
+
+    setInterval(createBubble, 500);
+});
+document.addEventListener('DOMContentLoaded', function () {
+    // Select the menu toggle button and navigation
+    const menuToggle = document.querySelector('.menu-toggle');
+    const navigation = document.querySelector('.navigation');
+
+    // Add click event listener to toggle menu visibility
+    menuToggle.addEventListener('click', () => {
+        navigation.classList.toggle('active');
+    });
+});
+
+
+    
+      </script>
+    <style>
+        :root { --bg-color-light: #ffffff; 
+    --text-color-light: #000000; 
+    --bg-color-dark: #121212; 
+    --text-color-dark: #ffffff; 
+    --header-bg-light: #f0f0f0; 
+    --header-bg-dark: #1a1a1a;
+    --blue-color: #2196F3;
+    --line-color: #000000; 
+    --shadow-color-light: 0 2px 5px rgba(0, 0, 0,0.2);
+    --shadow-color-dark: 0 2px 5px rgb(255, 255, 255,0.2);
+     }
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            background-color: var(--bg-color-light);
+            color: var(--text-color-light);
+           
+        }
+
+        header {
+    display:flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1% 2%;
+    background-color: var(--bg-color-light);
+    color: var(--text-color-light);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 1);
+    
+    margin: 20px;
+    
+}
+.menu-toggle {
+    display: none;
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+    color: var(--text-color-light);
+}
+
+
+nav ul {
+    display:flex;
+    flex-grow: 3;
+    justify-content: space-around;
+}
+
+nav ul li {
+    margin: 0 72px;
+    display:flex;
+ 
+   
+}
+
+nav ul li a {
+    font-size: 16px;
+    font-weight: 500;
+    display: flex;
+    background-color: var(--bg-color-light);
+    color: var(--text-color-light);
+    padding: 5px 10px;
+    transition: color 0.3s, background-color 0.3s;
+}
+
+nav ul li a:hover {
+    color: #fff;
+    background-color: #007BFF;
+    
+    border-radius: 4px;
+}
+
+
+        .container {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: var(--bg-color-light);
+            color: var(--text-color-light);
+            border-radius: 8px;
+            box-shadow:var(--shadow-color-light);
+        }
+
+        h2 {
+            color: #007bff;
+        }
+
+        code {
+          
+            padding: 2px 4px;
+            border-radius: 4px;
+            font-family: Consolas, Monaco, monospace;
+        }
+
+        pre {
+           
+            background-color:#ffffff;
+            padding: 10px;
+            border-radius: 4px;
+            overflow-x: auto;
+            box-shadow: var(--shadow-color-light);
+     
+        }
+        .comment{
+            color:red;  
+
+        }
+        .actual-code{
+            color:blue
+        }
+
+        a {
+            color: #007bff;
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+        
+
+.bubble-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    overflow: hidden;
+}
+
+.bubble {
+    position: absolute;
+    bottom: -100px;
+    background-color:#007BFF; /* Light blue color */
+    border-radius: 50%;
+    opacity: 0.6;
+    animation: move 15s infinite;
+}
+
+@keyframes move {
+    from {
+        transform: translateY(0) scale(1);
+    }
+    to {
+        transform: translateY(-120vh) scale(0);
+    }
+}
+
+header .logo 
+{ font-size: 24px;
+    font-weight: bold; 
+    color: var(--text-color-light); margin-right: 20px;} 
+.logo { display: flex; align-items: center; } 
+
+header .logo .code { color: var(--blue-color); }
+ header .logo .pro { color: var(--text-color-light); }
+/* Logo Container */
+.logo-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5px; /* Space between the line and triangle */
+}
+
+/* Black Line */
+.line {
+    width: 40px;
+    height: 4px;
+    background-color: var(--line-color);/* Black color */
+    border-radius: 2px;
+}
+
+/* Inverted Triangle */
+.triangle {
+    width: 0;
+    height: 0;
+    border-left: 20px solid transparent;
+    border-right: 20px solid transparent;
+    border-top: 30px solid #2196f3; /* Blue color */
+}
+
+
+
+           
+/* Dark mode styles */
+body.dark-mode {
+    --bg-color-light: var(--bg-color-dark);
+    --text-color-light: var(--text-color-dark);
+    --header-bg-light: var(--header-bg-dark);
+    --line-color: #ffffff;
+    --shadow-color-light:var(--shadow-color-dark);
+    
+}
+
+
+/* Toggle switch styles */
+.switch  {
+    position: absolute;
+    top: 16%;
+    right: 2%;
+    display: inline-block;
+    width: 60px;
+    height: 34px;
+    
+}
+
+.switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    transition: .4s;
+    border-radius: 34px;
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 26px;
+    width: 26px;
+    left: 4px;
+    bottom: 4px;
+    background-color: white;
+    transition: .4s;
+    border-radius: 50%;
+}
+
+input:checked + .slider {
+    background-color: #2196F3;
+}
+
+input:checked + .slider:before {
+    transform: translateX(26px);
+}
+
+
+        footer {
+            text-align: center;
+           
+            background-color: var(--bg-color-light);
+            color: var(--text-color-light);
+        }
+        .read-more-btn-next {
+    display: inline-block;
+    position:relative;
+    background-color: #007BFF;
+    color: #fff;
+    padding: 10px 30px;
+    left:78%;
+    font-size: 14px;
+    font-weight: bold;
+    text-align: center;
+    border-radius: 4px;
+    transition: background-color 0.3s;
+}
+
+.read-more-btn-next:hover {
+    background-color: #0056b3;
+}       
+.read-more-btn-prev {
+    display: inline-block;
+    position:relative;
+    background-color: #007BFF;
+    color: #fff;
+    padding: 10px 15px;
+   
+    font-size: 14px;
+    font-weight: bold;
+    text-align: center;
+    border-radius: 4px;
+    transition: background-color 0.3s;
+}
+
+.read-more-btn-next:hover {
+    background-color: #0056b3;
+}   
+
+        
+/* Responsive styles for screens smaller than 480px */
+@media (max-width: 480px) {
+    header {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+  
+    .menu-toggle {
+      display: inline-block;
+      position:absolute;
+      left:85% ;
+      top:3%;/* Show menu toggle button */
+    cursor: pointer;
+    }
+  
+    .navigation {
+      width: 100%;
+      display: none; /* Hide navigation by default */
+      flex-direction: column;
+      background-color: var(--bg-color-light);
+    }
+  
+    .navigation.active {
+      display:flex; /* Show navigation when active */
+    }
+  
+    .navigation ul {
+      flex-direction: column; /* Arrange items vertically */
+      gap: 0; /* Remove space between items */
+      padding: 0;
+    }
+  
+    .navigation ul li {
+      border-bottom: 1px solid var(--border-color-light);
+    }
+  
+    .navigation ul li a {
+      display: block;
+      padding: 10px;
+      font-size: 0.9rem;
+      color: var(--text-color-light);
+    }
+  
+    .navigation ul li a:hover {
+      background-color: var(--highlight-color-light); /* Highlight on hover */
+      color: var(--bg-color-light);
+    }
+    .switch {
+        position: absolute;
+        top: 10%;
+        right: 7%;
+        display: inline-block;
+        width: 60px;
+        height: 34px;
+    }
+.read-more-btn-prev{
+    position: absolute;
+    left:10%
+}
+   
+  }
+
+
+
+    </style>
+</head>
+<body>
+    <div class="bubble-container"></div>
+    <header class="responsive">
+        <div class="logo"> 
+            <div class="logo-container">
+                <div class="line"></div>
+                <div class="triangle"></div>
+            </div>
+           
+            <span class="code">Code</span><span class="pro">Pro</span> 
+        </div>
+        <button class="menu-toggle" aria-label="Toggle menu">☰</button>
+        <nav class="navigation">
+            <ul>
+                <li><a href="E:\blog\index.html">Home</a></li>
+                <li><a href="E:\blog\dailyupdates\dailyupdates.html">Daily Updates</a></li>
+                <li><a href="E:\blog\featuredarticles\featuredarticles.html">Featured Articles</a></li>
+                <li><a href="E:\blog\about\about.html">About</a></li>
+                <li><a href="E:\blog\contact\contact.html">Contact</a></li>
+               <label class="switch">
+                    <input type="checkbox" id="modeToggle"> 
+                   <span class="slider">
+       
+               </span> 
+               </label>
+            </ul>
+        </nav>
+      
+    </header>
+   
+   <h1 style="text-align: center;color:#007bff">Python Syntax</h1>
+    <div class="container">
+        <h2>Introduction</h2>
+        <p>
+            Python is a beginner-friendly programming language known for its clean and easy-to-read syntax.
+        
+        <h2>Indentation in Python</h2>
+        <p>
+            Indentation refers to the spaces at the beginning of a code line.
+
+            Where in other programming languages the indentation in code is for readability only, the indentation in Python is very important.
+            
+            Python uses indentation to indicate a block of code.</p>
+           <p> Python uses indentation (spaces or tabs) to define blocks of code, replacing curly braces <code>{}</code> or keywords like <code>end</code>.        </p>
+
+        <h3>Example:</h3>
+        <pre style="background-color: rgb(105, 195, 102);"><code class="comment" ># Correct Indentation</code>
+<code class="actual-code">if age > 18:
+    print("Adult")</code></pre>
+    <p>Python returns an <strong>ERROR:INVALID SYNTAX</strong> if the indentation is not correct</p>
+    <pre style="background-color:rgb(209, 129, 129);"><code class="comment" ># Incorrect Indentation</code>
+<code class="actual-code">if age > 18:
+print("Adult")</code></pre>
+
+        <h2>Case Senstivity</h2>
+        <p>
+            Python is a case-sensitive programming language. This means that identifiers (such as variable names, function names, and class names) that differ only in letter casing are treated as distinct.            <pre><code class="comment" >#both the variables are considered as two differnt ones</code>
+<code class="actual-code">variable_1=10</code>
+<code class="actual-code">VARIABLE_1=20</code></pre>
+
+
+        <h2>Comments</h2>
+        <p>
+            Comments in Python are used to explain code and make it more readable. They are ignored by the Python interpreter during execution.        </p>
+        <p>
+            Stay tuned for more tutorials as we dive deeper into Python's features and use cases. Happy coding!
+        </p>
+        <h3>Type of Comments</h3>
+        <ol>
+            <li>
+                <strong>Single Line Comments:</strong>
+                <p>Starts with <code>#</code>symbol</p>
+                <pre><code class="comment" >#This is Single Line Comment</code>
+<code class="actual-code">print('Python')</code><code class="comment">#comment after a statement</code>
+                    </pre>
+            </li>
+            <li>
+                <strong>Multi Line Comments:</strong>
+                <p>There are no dedicated multi-line comment symbols in Python, but triple quotes (<code>'''</code> or <code>"""</code>) are commonly used for this purpose.</p>
+                <pre><code class="comment" style="color:green" >"""
+This is a multi-line comment.
+You can write multiple lines of text here.
+"""</code>
+<code class="actual-code">print('Hello World!')</code>
+                    </pre>
+            </li>
+        </ol>
+<strong>Why Use Comments?</strong>
+<ul>
+    <li>
+        <p><b>Explain Logic:</b> Clarify complex or non-obvious code logic.
+        </p>
+    </li>
+    <li>
+        <p><b> Disable Code: </b>Temporarily remove lines of code from execution.
+        </p>
+    </li>
+    <li>
+        <p><b>Documentation: </b>Provide instructions or describe the purpose of the code.
+
+        </p>
+    </li>
+</ul>
+<a href="E:\blog\featuredarticles\python\python1.html" class="read-more-btn-prev">Previous</a>
+<a href="E:\blog\featuredarticles\python\python3_variables.html" class="read-more-btn-next">Next</a>
+
+    </div>
+
+    <footer>
+        &copy; 2024 Tech Blog. All Rights Reserved.
+    </footer>
+</body>
+</html>
